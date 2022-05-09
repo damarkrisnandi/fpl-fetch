@@ -1,0 +1,22 @@
+{
+  "name": "fpl-fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/api.js",
+    "update": "npm run build && npm run dev",
+    "dev": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "flatted": "^3.2.5",
+    "http": "0.0.1-security",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.1"
+  }
+}
