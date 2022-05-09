@@ -1,4 +1,4 @@
-const Manager = require('../models/manager');
+const { getManagerInfo, getManagerHistory } = require('../data/index');
 
 const { 
     createResponseBody, 
@@ -10,7 +10,7 @@ const getById = async (req, res) => {
     try {
         // /manager/{id}
         const id = req.url.split('/')[3];
-        const manager = await Manager.getById(id);
+        const manager = await getManagerInfo(id);
         createResponseBody(res, manager)
     } catch (error) {
         createResponseError(res, error)
@@ -22,7 +22,7 @@ const getHistory = async (req, res) => {
     try {
         // /history/{id}
         const id = req.url.split('/')[3];
-        const manager = await Manager.getHistory(id);
+        const manager = await getManagerHistory(id);
         createResponseBody(res, manager)
     } catch (error) {
         createResponseError(res, error)

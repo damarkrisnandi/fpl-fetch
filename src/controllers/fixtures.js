@@ -1,4 +1,4 @@
-const Fixtures = require('../models/fixtures');
+const { getFixtures } = require('../data/index');
 
 const { 
     createResponseBody, 
@@ -8,7 +8,7 @@ const {
 const getAll = async (req, res) => {
     
     try {
-        const fixtures = await Fixtures.getAll();
+        const fixtures = await getFixtures();
         createResponseBody(res, fixtures)
     } catch (error) {
         createResponseError(res, error)

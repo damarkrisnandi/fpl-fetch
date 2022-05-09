@@ -1,4 +1,4 @@
-const Bootstrap = require('../models/bootstrap');
+const { getBootstrap } = require('../data/index');
 
 const { 
     createResponseBody, 
@@ -8,7 +8,7 @@ const {
 const getAll = async (req, res) => {
     
     try {
-        const bootstrap = await Bootstrap.getAll();
+        const bootstrap = await getBootstrap();
         createResponseBody(res, bootstrap)
     } catch (error) {
         createResponseError(res, error)
