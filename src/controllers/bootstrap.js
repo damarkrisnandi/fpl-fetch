@@ -20,12 +20,14 @@ const getRecomendation = async (req, res) => {
         const bootstrap = await getBootstrap();
         const recomendations = bootstrap.elements.map(data => {
             return {
+                id: data.id,
                 name: `${data.first_name} ${data.second_name}`,
                 cost: data.now_cost,
                 points: data.total_points,
                 goals: data.goals_scored,
                 assists: data.assists,
-                surplus: data.total_points - (data.now_cost / 10)
+                surplus: data.total_points - (data.now_cost / 10),
+                news: data.news,
             }
         })
 
