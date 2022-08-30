@@ -17,6 +17,11 @@ const requests = [
           },
 
           {
+            url: (req, res) => '/recomendation',
+            res: async (req, res) => { Bootstrap.getRecomendation(req, res) },
+          },
+
+          {
             url: (req, res) => '/fixtures',
             res: async (req, res) => { Fixtures.getAll(req, res) },
           },
