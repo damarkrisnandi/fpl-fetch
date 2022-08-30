@@ -29,7 +29,7 @@ const getRecomendation = async (req, res) => {
             }
         })
 
-        recomendations.sort((a, b) => a.surplus - b.surplus)
+        recomendations.sort((a, b) => b.surplus - a.surplus)
         createResponseBody(res, recomendations)
     } catch (error) {
         createResponseError(res, error)
