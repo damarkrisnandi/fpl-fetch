@@ -32,6 +32,11 @@ const requests = [
           },
 
           {
+            url: (req, res) => `/player-surpluses/${req.url.split('/')[3]}`,
+            res: async (req, res) => { ElementSummary.getPlayerSurplusById(req, res) },
+          },
+
+          {
             url: (req, res) => `/manager/${req.url.split('/')[3]}`,
             res: async (req, res) => { Manager.getById(req, res) },
           },
