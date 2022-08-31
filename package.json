@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon ./src/api.js",
     "update": "npm run build && npm run dev",
-    "dev": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "dev": "netlify-lambda serve src",
+    "build": "netlify-lambda build src"
   },
   "keywords": [],
   "author": "",
