@@ -24,13 +24,13 @@ const getPlayerSurplusById = async (req, res) => {
         const id = req.url.split('/')[3];
         const elSummary = await getElementSummary(id);
 
-        const recomendationSummary = elSummary.history.map(data => {
+        const surplusSummary = elSummary.history.map(data => {
             return {
                 gameweek: data.round,
-                surplus_per_game: data.total_points - (data.value / 10)
+                surplus_per_game: (data.total_points - (data.value / 10)).toFixed(2)
             }
         })
-        createResponseBody(res, recomendationSummary)
+        createResponseBody(res, surplusSummary)
     } catch (error) {
         createResponseError(res, error)
     }
