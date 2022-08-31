@@ -22,7 +22,7 @@ const getRecomendation = async (req, res) => {
             return {
                 id: data.id,
                 name: `${data.first_name} ${data.second_name}`,
-                cost: (data.now_cost / 10),
+                cost: data.now_cost,
                 points: data.total_points,
                 goals: data.goals_scored,
                 assists: data.assists,
