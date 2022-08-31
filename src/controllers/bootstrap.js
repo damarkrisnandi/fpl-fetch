@@ -27,6 +27,7 @@ const getRecomendation = async (req, res) => {
                 goals: data.goals_scored,
                 assists: data.assists,
                 surplus: data.total_points - (data.now_cost / 10),
+                point_per_value: data.total_points / (data.now_cost / 10),
                 news: data.news,
             }
         })

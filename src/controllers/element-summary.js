@@ -27,8 +27,8 @@ const getPlayerSurplusById = async (req, res) => {
         const surplusSummary = elSummary.history.map(data => {
             return {
                 gameweek: data.round,
-                surplus_per_game: (data.total_points - (data.value / 10)).toFixed(2),
-                point_per_value: (data.total_points / (data.value / 10)).toFixed(2),
+                surplus_per_game: parseFloat((data.total_points - (data.value / 10)).toFixed(2)),
+                point_per_value: parseFloat((data.total_points / (data.value / 10)).toFixed(2)),
             }
         })
         createResponseBody(res, surplusSummary)
