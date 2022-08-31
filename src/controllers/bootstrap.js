@@ -29,6 +29,7 @@ const getRecomendation = async (req, res) => {
                 surplus: data.total_points - (data.now_cost / 10),
                 point_per_value: data.total_points / (data.now_cost / 10),
                 news: data.news,
+                chance_of_playing_next_round: data.chance_of_playing_next_round
             }
         })
 
