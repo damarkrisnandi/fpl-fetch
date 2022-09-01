@@ -16,6 +16,13 @@ const getAll = async (req, res) => {
 }
 
 const getRecomendation = async (req, res) => {
+    const positions = [
+        '',
+        'goalkeeper',
+        'defender',
+        'midfielder',
+        'forward'
+    ]
     try {
         const bootstrap = await getBootstrap();
         const recomendations = bootstrap.elements.map(data => {
@@ -31,7 +38,8 @@ const getRecomendation = async (req, res) => {
                 news: data.news,
                 chance_of_playing_next_round: data.chance_of_playing_next_round,
                 minutes: data.minutes,
-                in_dreamteam: data.in_dreamteam
+                in_dreamteam: data.in_dreamteam,
+                position: positions[data.element_type]
             }
         })
 
