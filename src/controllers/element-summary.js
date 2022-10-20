@@ -24,7 +24,7 @@ const getPlayerSurplusById = async (req, res) => {
         const id = req.url.split('/')[3];
         const elSummary = await getElementSummary(id);
         let total = 0;
-        let total2 = 2;
+        let total2 = 0;
         let mean_total = 0;
         const surplusSummary = elSummary.history.map((data, index) => {
             total += data.total_points;
