@@ -23,6 +23,7 @@ const app = async (req, res) => {
                     '/history/{id}',
                     '/recommendation',
                     '/player-surpluses/{id}',
+                    '/picks/{id}/{gw}',
                 ];
                 res.end(`{"message": "API ENDPOINT NOT FOUND! (endpoint that can be use: ${availEndPoint.join(', ')})"}`);
             }

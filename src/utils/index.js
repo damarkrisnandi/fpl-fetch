@@ -11,6 +11,8 @@ const headers = {
     ...cors
 };
 
+const reqSplit = (req, pos) => req.url.split('/')[pos];
+
 const createResponseBody = (res, body) => {
     res.writeHead(200, headers);
     res.end(JSON.stringify(parse(stringify(body))))
@@ -22,6 +24,7 @@ const createResponseError = (res, message) => {
 }
 
 module.exports = {
+    reqSplit,
     createResponseBody,
     createResponseError
 }

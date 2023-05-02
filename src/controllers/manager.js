@@ -1,4 +1,4 @@
-const { getManagerInfo, getManagerHistory } = require('../data/index');
+const { getManagerInfo, getManagerHistory, getPicksData } = require('../data/index');
 
 const { 
     createResponseBody, 
@@ -29,7 +29,21 @@ const getHistory = async (req, res) => {
     }
 }
 
+const getPicks = async (req, res) => {
+    
+    try {
+        // /picks/{id}/{gw}
+        const eid = req.url.split('/')[3];
+        const gw = req.url.split('/')[4];
+        const picks = await getPicksData(eid, gw);
+        createResponseBody(res, picks)
+    } catch (error) {
+        createResponseError(res, error)
+    }
+} 
+
 module.exports = {
     getById,
-    getHistory
+    getHistory,
+    getPicks
 }
