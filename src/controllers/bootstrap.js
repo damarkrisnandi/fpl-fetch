@@ -25,7 +25,7 @@ const getRecomendation = async (req, res) => {
     ]
     try {
         const bootstrap = await getBootstrap();
-        const gw = bootstrap.events.filter(o => (new Date()).getTime >= (new Date(o.deadline_time)).getTime).length
+        const gw = bootstrap.events.filter(o => o.average_entry_score > 0).length
         const recomendations = bootstrap.elements.map(data => {
             return {
                 id: data.id,
