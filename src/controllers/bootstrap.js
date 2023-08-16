@@ -40,6 +40,7 @@ const getRecomendation = async (req, res) => {
                 chance_of_playing_next_round: data.chance_of_playing_next_round,
                 minutes: data.minutes,
                 in_dreamteam: data.in_dreamteam,
+                gw,
                 position: positions[data.element_type]
             }
         })
