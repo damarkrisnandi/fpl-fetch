@@ -25,6 +25,7 @@ const getRecomendation = async (req, res) => {
     ]
     try {
         const bootstrap = await getBootstrap();
+        const gw = bootstrap.events.filter(o => (new Date()).getTime >= (new Date(o.deadline_time)).getTime).length
         const recomendations = bootstrap.elements.map(data => {
             return {
                 id: data.id,
@@ -34,7 +35,7 @@ const getRecomendation = async (req, res) => {
                 goals: data.goals_scored,
                 assists: data.assists,
                 surplus: data.total_points - (data.now_cost / 10),
-                point_per_value: data.total_points / (data.now_cost / 10),
+                point_per_value: data.total_points / ((data.now_cost * gw) / 100),
                 news: data.news,
                 chance_of_playing_next_round: data.chance_of_playing_next_round,
                 minutes: data.minutes,

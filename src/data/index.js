@@ -2,6 +2,8 @@ const axios = require('axios');
 
 const api_url = 'https://fantasy.premierleague.com/api';
 const managerInfoApi = `${api_url}/entry`;
+const leagueInfoApi = `${api_url}/leagues-classic`
+const leagueH2hInfoApi = `${api_url}/leagues-h2h-matches`
 const headers = {'Content-Type': 'application/json'};
 
 const getResult = (url) => {
@@ -26,11 +28,16 @@ const getManagerHistory = async (id) => await getResult(`${managerInfoApi}/${id}
 // https://fantasy.premierleague.com/api/entry/512709/event/34/picks/
 const getPicksData = async (eid, gw) => await getResult(`${managerInfoApi}/${eid}/event/${gw}/picks/`);
 
+const getLeague = async (id, page) => await getResult(`${leagueInfoApi}/${id}/standings/?page_standings=${page}`)
+const getH2hLeagueMatch = async (id, gw, page) => await getResult(`${leagueH2hInfoApi}/league/${id}/?page=${page}&event=${gw}`)
+
 module.exports = {
     getBootstrap,
     getFixtures,
     getElementSummary,
     getManagerInfo,
     getManagerHistory,
-    getPicksData
+    getPicksData,
+    getLeague,
+    getH2hLeagueMatch
 }
