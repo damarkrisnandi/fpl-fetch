@@ -11,7 +11,7 @@ const getLiveEvent = async (req, res) => {
         // /history/{id}
         const gw = req.url.split('/')[3];
         const liveData = await getLiveData(gw);
-        createResponseBody(res, fixtures)
+        createResponseBody(res, liveData)
     } catch (error) {
         createResponseError(res, error)
     }
