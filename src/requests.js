@@ -2,6 +2,7 @@ const Bootstrap = require('./controllers/bootstrap');
 const Fixtures = require('./controllers/fixtures');
 const ElementSummary = require('./controllers/element-summary');
 const Manager = require('./controllers/manager');
+const LiveEvent = require('./controllers/live-event');
 
 const { reqSplit } = require('./utils/index'); 
 
@@ -51,6 +52,10 @@ const requests = [
           {
             url: (req, res) => `/picks/${reqSplit(req, 3)}/${reqSplit(req, 4)}`,
             res: async (req, res) => { Manager.getPicks(req, res) },
+          },
+          {
+            url: (req, res) => `/live-event/${reqSplit(req, 3)}`,
+            res: async (req, res) => { LiveEvent.getLiveEvent(req, res) },
           },
       ]
     }

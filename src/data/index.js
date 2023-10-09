@@ -30,6 +30,7 @@ const getPicksData = async (eid, gw) => await getResult(`${managerInfoApi}/${eid
 
 const getLeague = async (id, page) => await getResult(`${leagueInfoApi}/${id}/standings/?page_standings=${page}`)
 const getH2hLeagueMatch = async (id, gw, page) => await getResult(`${leagueH2hInfoApi}/league/${id}/?page=${page}&event=${gw}`)
+const getLiveData = async (gw) => await getResult(`${api_url}/event/${gw}/live/`)
 
 module.exports = {
     getBootstrap,
@@ -39,5 +40,6 @@ module.exports = {
     getManagerHistory,
     getPicksData,
     getLeague,
-    getH2hLeagueMatch
+    getH2hLeagueMatch,
+    getLiveData
 }
