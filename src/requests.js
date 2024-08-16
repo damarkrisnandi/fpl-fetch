@@ -65,7 +65,7 @@ const requests = [
           },
           {
             url: (req, res) => `/league-h2h/${reqSplit(req, 3)}/${reqSplit(req, 4)}/${reqSplit(req, 5)}`,
-            res: async (req, res) => { LeagueH2h.getH2hLeagueMatch(req, res) },
+            res: async (req, res) => { LeagueH2h.getH2hLeague(req, res) },
           },
 
       ]
