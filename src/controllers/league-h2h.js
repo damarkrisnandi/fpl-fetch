@@ -5,7 +5,7 @@ const {
     createResponseError 
 } = require('../utils/index'); 
 
-const getH2hLeague = async (req, res) => {
+const getH2hLeagueByIdAndGw = async (req, res) => {
     
     try {
         // /league-h2h/{id}/{page}/{gw}
@@ -20,5 +20,5 @@ const getH2hLeague = async (req, res) => {
 }
 
 module.exports = {
-    getH2hLeague
+    getH2hLeagueByIdAndGw
 }

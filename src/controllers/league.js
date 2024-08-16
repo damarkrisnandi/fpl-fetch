@@ -6,7 +6,7 @@ const {
     reqSplit
 } = require('../utils/index'); 
 
-const getLeague = async (req, res) => {
+const getLeagueById = async (req, res) => {
     
     try {
         // /league/{id}/{page}
@@ -20,5 +20,5 @@ const getLeague = async (req, res) => {
 }
 
 module.exports = {
-    getLeague
+    getLeagueById
 }
