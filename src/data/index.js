@@ -29,7 +29,7 @@ const getManagerHistory = async (id) => await getResult(`${managerInfoApi}/${id}
 const getPicksData = async (eid, gw) => await getResult(`${managerInfoApi}/${eid}/event/${gw}/picks/`);
 
 const getLeague = async (id, page) => await getResult(`${leagueInfoApi}/${id}/standings/?page_standings=${page}`)
-const getH2hLeagueMatch = async (id, gw, page) => await getResult(`${leagueH2hInfoApi}/league/${id}/?page=${page}&event=${gw}`)
+const getH2hLeagueMatch = async (id, page, gw) => await getResult(`${leagueH2hInfoApi}/league/${id}/?page_standings=${page}${gw ? '&event=' + gw : ''}`)
 const getLiveData = async (gw) => await getResult(`${api_url}/event/${gw}/live/`)
 
 module.exports = {
