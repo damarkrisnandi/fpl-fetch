@@ -2,7 +2,7 @@ const Bootstrap = require('./controllers/bootstrap');
 const Fixtures = require('./controllers/fixtures');
 const ElementSummary = require('./controllers/element-summary');
 const Manager = require('./controllers/manager');
-const LiveEvent = require('./controllers/league');
+const LiveEvent = require('./controllers/live-event');
 const League = require('./controllers/league');
 const LeagueH2h = require('./controllers/league-h2h');
 
